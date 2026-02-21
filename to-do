@@ -1,0 +1,102 @@
+
+
+- make spinning slots for slot machine
+- trigger spinning on button push
+- stop spinning after a timer
+- make an image spin on the spinner and change after each rotation
+- title screen -> game screen
+
+- different coins you can use to start spins with different danger levels
+- add more damage options
+- different spinner options with different results. Kind of a deck builder thing?
+
+title -> intro -> choose what to put in the spin hopper -> spin mode. Choose danger coins and run spinner
+
+coins could actively change result pool mid spin round.
+
+coin ideas
+- double rewards but add a threat.
+
+------
+MVP
+
+-[x] Limited number of spins
+-[x] hit points/life bar
+-[x] Have to hit a point limit to win round
+-[x] some results give points, some results take life, some results do both
+-[x] choose coin to spin with
+-[x] coin adds options to the pool
+-[x] show results of spin, transition to starting new spin round
+-[x] round end screen
+-[x] shop screen to modify pool using won prizes
+- 3 random options on shop screen.
+-[x] purchase and remove
+-[x] transition to next spin round when done shopping
+-[x] narrative intro
+- between round narratives screens
+
+Stretch goals:
+-[x] combos
+- meta-progression. Left over prize money can fuel overall game progress upgrades
+
+
+----- 
+immediate
+
+- intro
+- - explain coins
+- - explain relying on machines to live
+
+- spin state ui
+- - spin effect
+- coin select ui
+- - coin gfx, rotate grow and shrink. rotate horizontally
+- - - double
+- - - half
+- - - MINOR
+- - - MAJOR
+- result pool ui
+- - result gfx
+- - - big damage
+- - - DMG
+- - - MINOR
+- - - MAJOR
+- combox gfx
+- result summary ui
+- - press your luck option
+- shop ui
+
+- narratives between stages
+
+
+***
+spin state ui
+
+- need to see spinner with robot
+- guy with coin holding it up on the left
+- result pool gfx top right in little stacks
+- selected coin indicator
+
+----
+
+-[x] dmg slot
+-[x] big dmg slot
+-[X] dmg pool gfx
+-[x] big dmg pool gfx
+
+-[x] minor coin GFX
+-[x] major coin gfx
+-[x] double coin gfx (greed)
+-[x] half coin gfx (shield)
+
+-spin button
+-coin button
+-result button
+-abort button
+
+- life indicator
+- target indicator
+
+- spin button indicator
+
+- start plugging in results

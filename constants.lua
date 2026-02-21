@@ -1,0 +1,38 @@
+-- Screen --
+SCREEN_TOP = 0
+SCREEN_BOTTOM = 127
+SCREEN_LEFT = 0
+SCREEN_RIGHT = 127
+
+
+-- Input --
+
+INPUT = {
+    LEFT = 0,
+    RIGHT = 1,
+    UP = 2,
+    DOWN = 3,
+    O = 4,
+    X = 5
+}
+
+-- GFX --
+
+SPRITE_SIDE_LENGTH = 8
+COLOR = {
+    BLACK = 0,
+    MAUVE = 2,
+    DARK_GREY = 5,
+    GREY = 6,
+    WHITE = 7,
+    RED = 8,
+    ORANGE = 9,
+    GREEN = 11,
+    CREAM = 15
+}
+
+MAIN_TRANSPARENCY = COLOR.MAUVE
+
+-- CONFIG --
+
+RESULT_COUNT = 3
