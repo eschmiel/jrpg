@@ -21,3 +21,10 @@ function use_transparency(t, func)
     palt(t, false)
     palt(MAIN_TRANSPARENCY, true)
 end
+
+function aa_bb(b1,b2)
+    return b1[1] <= b2[3] 
+       and b1[3] >= b2[1] 
+       and b1[2] <= b2[4] 
+       and b1[4] >= b2[2]
+end

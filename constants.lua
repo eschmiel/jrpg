@@ -28,6 +28,7 @@ COLOR = {
     RED = 8,
     ORANGE = 9,
     GREEN = 11,
+    PINK = 14,
     CREAM = 15
 }
 
@@ -35,4 +36,4 @@ MAIN_TRANSPARENCY = COLOR.MAUVE
 
 -- CONFIG --
 
-RESULT_COUNT = 3
+WALL_FLAG = 1

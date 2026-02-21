@@ -1,5 +1,7 @@
 function _init()
-    local init_state = mk_title_state()
+    palt(0,false)
+    palt(MAIN_TRANSPARENCY, true)
+    local init_state = mk_game_state()
     state_manager = mk_state_manager(init_state)
 end
 
@@ -10,5 +12,6 @@ end
 function _draw()
     cls()
     state_manager:draw()
+    draw_screen_edge()
 end
 

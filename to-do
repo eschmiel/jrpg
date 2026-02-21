@@ -1,5 +1,5 @@
-- render player
-- move player
+-[x] render player
+-[x] move player
 - render map
 - walls
 - render NPCs
@@ -27,6 +27,7 @@
 - shop
 - random battles
 
+- saving
 - animations
 - audio
 - graphic effects
