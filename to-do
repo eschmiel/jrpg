@@ -1,11 +1,14 @@
 -[x] render player
 -[x] move player
-- render map
-- walls
-- render NPCs
-- scrolling
-- doors
+-[x] render map
+-[x] walls
+-[x] render NPCs
 - trigger npc dialogue
+-- dialogue controller
+-- text boxes
+- zones
+-[kinda] scrolling
+- doors
 - stat screen
 - equipment
 - equipment menu

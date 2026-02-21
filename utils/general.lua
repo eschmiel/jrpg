@@ -6,6 +6,13 @@ function copyTbl(src,tar)
     return tar
 end
 
+function concat_tbl(t1,t2)
+    local c_tbl = {}
+    for i in all(t1) do add(c_tbl,i) end
+    for i in all(t2) do add(c_tbl,i) end
+    return c_tbl
+end
+
 function print_text_tbl(tbl, x, y, col)
     if(not col) col = COLOR.GREY
     for l=1, #tbl do
@@ -27,4 +34,8 @@ function aa_bb(b1,b2)
        and b1[3] >= b2[1] 
        and b1[2] <= b2[4] 
        and b1[4] >= b2[2]
+end
+
+function get_tile_box(tile)         
+    return {tile[1]*8,tile[2]*8,(tile[1]+1)*8,(tile[2]+1)*8}
 end

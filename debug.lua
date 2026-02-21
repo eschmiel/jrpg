@@ -1,7 +1,7 @@
 function printTbl(tbl, key)
     if(key) then
         for i in all(tbl) do
-            print(i[key])
+            printh(i[key],'log',true,true)
         end
     else
         foreach(tbl, function(v)print(RESULT_LABEL[v])end)
