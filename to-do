@@ -6,22 +6,24 @@
 - trigger npc dialogue
 -- dialogue controller
 -- text boxes
-- zones
--[kinda] scrolling
-- doors
-- stat screen
-- equipment
-- equipment menu
-- battle screen
-- battle menu
-- render monster
-- monster stats
-- apply battle action
-- apply monster action
-- turns
-- monster death
--- exp gain
--- leveling up
+clean this up: 2 points
+- zones 2
+-[kinda] scrolling 2
+- doors 1
+- stat screen 2
+- equipment 2
+- equipment menu 2
+- battle screen 2
+- battle menu 2
+- render monster 2
+- monster stats 2
+- apply battle action 2
+- apply monster action 2
+- turns 2
+- monster death 2
+-- exp gain 1
+-- leveling up. 2
+32 at this point. expecting 16 a week (2 three days of the week, 5 sat and sun) so two weeks to get here
 -- money + money gain
 - player death
 -- lose half money + respawn
