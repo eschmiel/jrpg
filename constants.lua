@@ -4,6 +4,8 @@ SCREEN_BOTTOM = 127
 SCREEN_LEFT = 0
 SCREEN_RIGHT = 127
 
+SCREEN_WIDTH = 127
+
 
 -- Input --
 
@@ -33,6 +35,15 @@ COLOR = {
 }
 
 MAIN_TRANSPARENCY = COLOR.MAUVE
+
+-- General --
+
+FACING = {
+    LEFT=1,
+    UP=2,
+    RIGHT=3,
+    DOWN=4
+}
 
 -- CONFIG --
 

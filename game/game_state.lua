@@ -5,7 +5,6 @@ function mk_game_state()
         controller = mk_explore_controller(),
         update = function(self)
             self.controller.run(self)
-            -- handle_wall_collisions(self)
             handle_block_collisions(self)
         end,
 
@@ -16,6 +15,12 @@ function mk_game_state()
             foreach(zone.npcs, function(npc)
                 m_spr(npc.gid,npc.x,npc.y)
             end)
+            if(self.loaded_dialogue) then
+                render_dialogue(self.loaded_dialogue)
+            end
+            -- render_border_box(30,30,68,68,COLOR.GREY, COLOR.BLACK)
+            -- spr(128,32,40,8,6)
+            -- render_dialogue(zone.npcs[2].dialogue[1])
         end
     }
 end
@@ -29,13 +34,51 @@ zone = {
             gid = 3,
             -- We'll use map coordinates for NPCs to make them easier to place in relation to the map.
             x = 11,
-            y= 9
+            y= 9,
+            dialogue={
+                {
+                    name='Boris',
+                    text={
+                        'Hello, I am Boris.'
+                    }
+                },
+                {
+                    name='Boris',
+                    text={
+                        'Are you not entertained?!'
+                    }
+                }
+            }
         },
         {
             gid = 3,
             -- We'll use map coordinates for NPCs to make them easier to place in relation to the map.
             x = 7,
-            y= 2
+            y= 2,
+            dialogue={
+                {
+                    name='Long Winded Man',
+                    text={
+                        'You must journey',
+                        "to the center of the world.",
+                        "aggg"
+                    }
+                },
+                {
+                    name='Long Winded Man',
+                    text={
+                        'There you will find a man named',
+                        'Boris.',
+                        'He will entertain you'
+                    }
+                },
+                {
+                    name='Long Winded Man',
+                    text={
+                        'Guffaw or perish',
+                    }
+                }
+            }
         }
     }
 }

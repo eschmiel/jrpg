@@ -36,6 +36,14 @@ function aa_bb(b1,b2)
        and b1[4] >= b2[2]
 end
 
+-- bb = bounding box
+function point_in_bb(point, b_box)
+    return point[1] < b_box[3]
+    and point[1] > b_box[1]
+    and point[2] < b_box[4]
+    and point[2] > b_box[2]
+end
+
 function get_tile_box(tile)         
     return {tile[1]*8,tile[2]*8,(tile[1]+1)*8,(tile[2]+1)*8}
 end
