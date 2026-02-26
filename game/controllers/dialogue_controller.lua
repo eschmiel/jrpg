@@ -2,7 +2,6 @@
 --	state
 --	speaker
 -- }
-
 function mk_dialogue_controller(options)
 	options.state.loaded_dialogue = mk_dialogue(options.speaker)
 	return {

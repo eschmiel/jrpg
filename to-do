@@ -3,10 +3,11 @@
 -[x] render map
 -[x] walls
 -[x] render NPCs
-- trigger npc dialogue
--- dialogue controller
--- text boxes
-clean this up: 2 points
+-[x] trigger npc dialogue
+--[x] dialogue controller
+--[x] text boxes
+--[x] state machine for controllers 2pts.
+-- debugger function for quickly writing log prints
 - zones 2
 -[kinda] scrolling 2
 - doors 1
