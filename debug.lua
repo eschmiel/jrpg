@@ -55,3 +55,8 @@ function debug(val)
     printh("--------", "debug",false, true)
     printh(val, "debug",false, true)
 end
+
+function logTbl(tbl,tbl_name)
+    log(tbl_name)
+    foreach(tbl, function(v)log(v)end)
+end

@@ -1,9 +1,10 @@
 function handle_block_collisions(state)
     local p = state.player
-    local walls = find_walls(p)
-    local npcs = zone.npcs
-    local npc_tiles = get_npc_tiles(npcs)
+    local zone = state.zone
+    local walls = find_walls(p,zone)
+    local npc_tiles = get_npc_tiles(zone)
     local blockers = concat_tbl(walls,npc_tiles)
+    -- foreach(blockers, function(b)logTbl(b,"blocker coords")end)
     foreach(blockers, function(b)
     	local b_box = get_tile_box(b)
     	handle_left_block_col(p,b_box)
@@ -13,20 +14,22 @@ function handle_block_collisions(state)
 	end)
 end
 
-function get_npc_tiles(npcs)
+function get_npc_tiles(zone)
 	local tiles = {}
-	foreach(npcs,function(n) add(tiles,{n.x,n.y}) end)
+	foreach(zone.npcs,function(n) add(tiles,{n.x,n.y}) end)
 	return tiles
 end
 
-function find_walls(player)
+function find_walls(player,zone)
 	local mx = flr(player.x/8)-2
 	local my = flr(player.y/8)-2
 	local walls = {}
 	for y=1, 3 do
 		for x=1, 3 do
 			local tile = mget(mx+x,my+y)
-			if(fget(tile,WAll_FLAG)) add(walls, {mx+x,my+y})
+			if(fget(tile,WAll_FLAG)) then
+				add(walls, {mx+x,my+y})
+			end
 		end
 	end
 
