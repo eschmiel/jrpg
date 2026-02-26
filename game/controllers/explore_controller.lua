@@ -25,30 +25,15 @@ function mk_explore_controller()
 				sfx(0)
 				local npc = check_npc_interact(state)
 				if(npc) then
-					state.loaded_dialogue = {
-						current = 1,
-						dialogue=npc.dialogue,
-						get_current_dialogue = function(self) return self.dialogue[self.current] end
-					}
-					state.controller = mk_dialogue_controller()
-
-				-- printh(rnd(1),"log",true,true)
-				-- printh(state.loaded_dialogue[1].text[1],'log',false,true)
+					state.controller:switch(CONTROLLERS.DIALOGUE,{state=state,speaker=npc})
 				end
 			end
+		end,
+		stop = function()
+
 		end
 	}
 end
-
--- on O press
--- check to see if interaction collider is colliding with any npcs
--- if so:
--- - switch to dialogue controls
--- - load collided npc's dialogue 
--- - create text box and display loaded dialogue
--- - iterate through dialogue on O press
--- - unload dialogue, remove text box and switch back to explore controls at end of dialogue
--- controller state manager
 
 function check_npc_interact(state)
 	local int_p = state.player:interact_point()

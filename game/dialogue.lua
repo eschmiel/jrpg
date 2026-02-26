@@ -9,6 +9,16 @@ function render_dialogue(loaded_dialogue)
     print_text_tbl(dialogue.text, 4, SCREEN_BOTTOM - DIALOGUE_BOX_HEIGHT + 4)
 end
 
+
+-- we should come up with a better name for this. This dialogue runner object is different than the dialogue object extracted from the speaker
+function mk_dialogue(speaker)
+	return {
+		current = 1,
+		dialogue=speaker.dialogue,
+		get_current_dialogue = function(self) return self.dialogue[self.current] end
+	}
+end
+
 -- DIALOGUE_BOX_HEIGHT = 36
 DIALOGUE_BOX_HEIGHT = 28
 NAME_BOX_HEIGHT = 12

@@ -20,6 +20,13 @@ function print_text_tbl(tbl, x, y, col)
     end
 end
 
+function tbl_contains(tbl,val)
+    for k,v in pairs(tbl) do
+        if(v == val) return true
+    end
+    return false
+end
+
 function use_transparency(t, func)
     if(not t) func() return
     palt(t, true)

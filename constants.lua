@@ -18,6 +18,11 @@ INPUT = {
     X = 5
 }
 
+CONTROLLERS = {
+    EXPLORER = 1,
+    DIALOGUE = 2
+}
+
 -- GFX --
 
 SPRITE_SIDE_LENGTH = 8

@@ -2,9 +2,9 @@ function mk_game_state()
     return
     {
         player = mk_player(40,80),
-        controller = mk_explore_controller(),
+        controller = mk_controller(mk_explore_controller()),
         update = function(self)
-            self.controller.run(self)
+            self.controller:run(self)
             handle_block_collisions(self)
         end,
 
@@ -18,9 +18,6 @@ function mk_game_state()
             if(self.loaded_dialogue) then
                 render_dialogue(self.loaded_dialogue)
             end
-            -- render_border_box(30,30,68,68,COLOR.GREY, COLOR.BLACK)
-            -- spr(128,32,40,8,6)
-            -- render_dialogue(zone.npcs[2].dialogue[1])
         end
     }
 end
