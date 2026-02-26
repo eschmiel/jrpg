@@ -1,4 +1,5 @@
 function _init()
+    init_log()
     palt(0,false)
     palt(MAIN_TRANSPARENCY, true)
     local init_state = mk_game_state()

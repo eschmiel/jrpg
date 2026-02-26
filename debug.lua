@@ -40,3 +40,18 @@ function render_box(box,c)
     if(c) c2 = c
     rect(box[1],box[2],box[3],box[4],c2)
 end
+
+function init_log()
+    printh("starting log - "..rnd(1),"log",true,true)
+    printh("------","log",false,true)
+end
+
+function log(val)
+    printh(val, "log",false, true)
+end
+
+function debug(val)
+    printh("debug log - "..rnd(1),"debug",true,true)
+    printh("--------", "debug",false, true)
+    printh(val, "debug",false, true)
+end
