@@ -4,11 +4,9 @@ function mk_game_state()
         player = mk_player(40,80),
         controller = mk_controller(mk_explore_controller()),
         load_zone = function(self,zone_def)
-            log("loading zone")
             self.walls = load_walls(zone_def)
             self.npcs = load_npcs(zone_def)
             self.zone_map = zone_def.map
-            logTbl(self.zone_map, "zone map")
         end,
         update = function(self)
             self.controller:run(self)
@@ -32,63 +30,6 @@ function mk_game_state()
 
     return state
 end
-
-function render_zone_map(zone_map)
-    map(zone_map.x,zone_map.y,0,0,zone_map.w,zone_map.h)
-end
-
-function render_npcs(npcs)
-    foreach(npcs,function(n) spr(n.gid,n.world_position[1],n.world_position[2]) end)
-end
-
-
-function map_to_world(coord, zone_def)
-    local origin_coord = {coord[1] - zone_def.map.x, coord[2] - zone_def.map.y}
-    local world_coord = {origin_coord[1]*SPRITE_SIDE_LENGTH, origin_coord[2]*SPRITE_SIDE_LENGTH} 
-    return world_coord
-end
-
-function load_walls(zone_def)
-    log("loading walls")
-    local walls = {}
-    for x=0, zone_def.map.w-1 do
-        for y=0, zone_def.map.h-1 do
-            local map_x = x+zone_def.map.x
-            local map_y = y+zone_def.map.y
-            local tile = mget(map_x,map_y)
-            if(fget(tile,WAll_FLAG)) then
-                local wall_position = map_to_world({map_x, map_y},zone_def)
-                add(walls,wall_position)
-            end
-        end
-    end 
-    log(walls)
-    return walls
-end
-
-function load_npcs(zone_def)
-    log("loading npcs")
-    local npcs = copyTbl(zone_def.npcs)
-    foreach(npcs, function(npc)
-        npc.world_position = map_to_world({npc.x,npc.y},zone_def)
-    end)
-
-    log(npcs)
-    return npcs
-end
-
-function get_npc_positions(npcs)
-    local positions = {}
-    foreach(npcs,function(n) add(positions,n.world_position) end)
-    return positions
-end
--- load_zone(zone_def)
---- find walls
---- find npcs
--- collision detect against npcs and walls in loaded zone
-
--- find walls when zone first loads. Save coordinates in world space
--- find npcs when zone first loads. Save in world space
 
 function debug_controller(state)
     if(btnp(INPUT.X)) then

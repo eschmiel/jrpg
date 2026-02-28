@@ -10,6 +10,7 @@ __lua__
 #include ./narrative/narrative_state.lua
 #include ./state_manager.lua
 
+#include ./game/zone.lua
 #include ./game/zones/zone-1.lua
 #include ./game/zones/zone-2.lua
 #include ./game/game_state.lua

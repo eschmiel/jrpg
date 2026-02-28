@@ -1,11 +1,4 @@
-we have concepts of screen space, map space and world space
-----
+- cleanup zone code first
 
-We need a world space concept and translate maps to that
-
------
-
- things that need translation
-
- collisions with npcs and walls
- where npcs exist
+camera hit boxes: left,top,right,bottom.
+Increase camera offsets based on collisions
