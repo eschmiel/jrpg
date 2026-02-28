@@ -46,17 +46,32 @@ function init_log()
     printh("------","log",false,true)
 end
 
+-- function log(val)
+--     printh(val, "log",false, true)
+-- end
+
+
 function log(val)
+    if(type(val) == TYPES.TABLE) logTbl(val, "logging table")
     printh(val, "log",false, true)
+end
+
+function logTbl(tbl,tbl_name, indent)
+    local i = indent
+    if (not i) i =0
+    local str = ""
+    for count=1,i do str=str.."-" end
+    log(str..tbl_name)
+    log(str.."{")
+    for k,v in pairs(tbl) do 
+        if(type(v) == TYPES.TABLE) then logTbl(v,k, i+1)
+        else log(str.."-"..k..": "..v) end
+    end
+    log(str.."}")
 end
 
 function debug(val)
     printh("debug log - "..rnd(1),"debug",true,true)
     printh("--------", "debug",false, true)
     printh(val, "debug",false, true)
-end
-
-function logTbl(tbl,tbl_name)
-    log(tbl_name)
-    foreach(tbl, function(v)log(v)end)
 end

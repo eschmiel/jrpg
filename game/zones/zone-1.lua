@@ -1,5 +1,5 @@
 zone1 = {
-    map = { 0,0 },
+    map = { x=0,y=0, w=18,h=15 },
     npcs = {
         {
             gid = 3,

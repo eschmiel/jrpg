@@ -1,12 +1,11 @@
 function handle_block_collisions(state)
     local p = state.player
-    local zone = state.zone
-    local walls = find_walls(p,zone)
-    local npc_tiles = get_npc_tiles(zone)
-    local blockers = concat_tbl(walls,npc_tiles)
-    -- foreach(blockers, function(b)logTbl(b,"blocker coords")end)
+    local npc_positions = get_npc_positions(state.npcs)
+    local blockers = concat_tbl(state.walls,npc_positions)
+    -- log(blockers)
     foreach(blockers, function(b)
-    	local b_box = get_tile_box(b)
+    	-- log(b)
+    	local b_box = get_sprite_box(b)
     	handle_left_block_col(p,b_box)
     	handle_top_block_col(p,b_box)
     	handle_right_block_col(p,b_box)
@@ -14,28 +13,13 @@ function handle_block_collisions(state)
 	end)
 end
 
-function get_npc_tiles(zone)
-	local tiles = {}
-	foreach(zone.npcs,function(n) add(tiles,{n.x,n.y}) end)
-	return tiles
-end
+-- load_zone(zone_def)
+--- find walls
+--- find npcs
+-- collision detect against npcs and walls in loaded zone
 
-function find_walls(player,zone)
-	local mx = flr(player.x/8)-2
-	local my = flr(player.y/8)-2
-	local walls = {}
-	for y=1, 3 do
-		for x=1, 3 do
-			local tile = mget(mx+x,my+y)
-			if(fget(tile,WAll_FLAG)) then
-				add(walls, {mx+x,my+y})
-			end
-		end
-	end
-
-	return walls
-end
-
+-- find walls when zone first loads. Save coordinates in world space
+-- find npcs when zone first loads. Save in world space
 
 function handle_left_block_col(player, block_box)
 	local p_box = player:left_col()

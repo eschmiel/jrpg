@@ -39,7 +39,11 @@ COLOR = {
     CREAM = 15
 }
 
-MAIN_TRANSPARENCY = COLOR.MAUVE
+-- SYSTEM --
+
+TYPES = {
+    TABLE = 'table'
+}
 
 -- General --
 
@@ -50,6 +54,10 @@ FACING = {
     DOWN=4
 }
 
+
+
 -- CONFIG --
+
+MAIN_TRANSPARENCY = COLOR.MAUVE
 
 WALL_FLAG = 1

@@ -1,8 +1,12 @@
-function copyTbl(src,tar)
+function copyTbl(src)
     local tar = {}
-    foreach(src,function(i)
-        add(tar, i)
-    end)
+    for k,v in pairs(src) do 
+        if(type(v) == TYPES.TABLE) then 
+            local c = {}
+            c[k] = copyTbl(v)
+            tar[k]=v
+        else tar[k] = v end
+    end
     return tar
 end
 
@@ -53,4 +57,9 @@ end
 
 function get_tile_box(tile)         
     return {tile[1]*8,tile[2]*8,(tile[1]+1)*8,(tile[2]+1)*8}
+end
+
+--p = position
+function get_sprite_box(p)
+    return{p[1],p[2],p[1]+SPRITE_SIDE_LENGTH,p[2]+SPRITE_SIDE_LENGTH}
 end

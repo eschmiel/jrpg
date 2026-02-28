@@ -1,11 +1,11 @@
 pico-8 cartridge // http://www.pico-8.com
 version 42
 __lua__
+#include constants.lua
 #include debug.lua
 #include ./utils/general.lua
 #include ./utils/rendering.lua
 #include main.lua
-#include constants.lua
 #include ./title/title_state.lua
 #include ./narrative/narrative_state.lua
 #include ./state_manager.lua

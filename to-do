@@ -8,7 +8,7 @@
 --[x] text boxes
 --[x] state machine for controllers 2pts.
 --[x] debugger function for quickly writing log prints
-- zones 2
+-[x] zones 2
 -[kinda] scrolling 2
 - doors 1
 - stat screen 2

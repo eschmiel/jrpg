@@ -37,8 +37,8 @@ end
 
 function check_npc_interact(state)
 	local int_p = state.player:interact_point()
-	for npc in all(state.zone.npcs) do
-		local b_box = get_tile_box({npc.x,npc.y})
+	for npc in all(state.npcs) do
+		local b_box = get_sprite_box(npc.world_position)
 		if(point_in_bb(int_p,b_box)) return npc
 	end
 	return false
